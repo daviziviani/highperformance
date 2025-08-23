@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio High Performance de 21 Dias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais para o corpo da página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden; /* Previne scroll horizontal */
+        }
+        /* Imagem de fundo da seção principal com sobreposição escura */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/9ZqFJSk.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Estilo e transição para os botões de chamada para ação */
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+        }
+        /* Cor dourada para textos de destaque */
+        .gold-text {
+            color: #D4AF37;
+        }
+        /* Divisor visual entre as seções */
+        .section-divider {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Remove o marcador padrão dos itens do FAQ */
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        /* Classe para o efeito de degradê no texto */
+        .red-gradient-text {
+            background: linear-gradient(45deg, #ef4444, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <div class="max-w-4xl pt-16 md:pt-0">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider leading-tight">
+                21 Dias Para Desbloquear o Seu <span class="red-gradient-text">Novo Eu</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+                Um desafio de transformação física, mental e espiritual que vai ativar sua verdadeira identidade.
+            </p>
+            <a href="#cta" class="cta-button inline-block mt-10 bg-red-600 text-white uppercase font-bold text-base md:text-lg py-3 px-10 md:py-4 md:px-12 rounded-lg">
+                Quero Entrar no Desafio
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Apresentação -->
+        <section class="py-16 md:py-24 px-6 section-divider bg-black border-t border-gray-800">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Chega de Viver no Automático.</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    O Desafio High Performance é uma imersão de 21 dias para você quebrar padrões e construir uma nova identidade. Usamos a <span class="font-bold red-gradient-text">disciplina</span> da corrida, o poder dos <span class="font-bold red-gradient-text">hábitos</span>, a clareza da <span class="font-bold red-gradient-text">mentalidade</span> e a força da <span class="font-bold red-gradient-text">fé</span> para forjar sua melhor versão. Não é sobre motivação, é sobre transformação.
+                </p>
+            </div>
+        </section>
+
+        <!-- O que você vai receber -->
+        <section class="py-16 md:py-24 px-6 section-divider relative overflow-hidden">
+             <canvas id="arsenal-particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="max-w-6xl mx-auto relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">O Arsenal Para Sua Transformação</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Card 1 -->
+                    <div class="bg-black/70 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
+                        <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Treinos de Performance</h3>
+                        <p class="text-gray-400">Planilhas de corrida e treinos funcionais para todos os níveis.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-black/70 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
+                        <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Mentalidade Inabalável</h3>
+                        <p class="text-gray-400">Exercícios práticos para blindar sua mente e aumentar o foco.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-black/70 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
+                        <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-9-5.747h18"></path></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Práticas Espirituais</h3>
+                        <p class="text-gray-400">Direcionamentos para fortalecer sua fé e encontrar propósito.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-black/70 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
+                        <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                        <h3 class="text-xl font-bold mb-2">Comunidade & Suporte</h3>
+                        <p class="text-gray-400">Acesso a um grupo exclusivo para apoio e evolução diária.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformações esperadas -->
+        <section class="py-16 md:py-24 px-6 section-divider relative overflow-hidden">
+            <canvas id="transformations-particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">O Que Esperar em 21 Dias</h2>
+                <div class="bg-black border border-gray-700 rounded-lg p-8 md:p-10 max-w-lg mx-auto">
+                    <ul class="space-y-6 text-left text-lg text-gray-200">
+                        <li class="flex items-center"><svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Energia e disposição para dominar seu dia.</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Clareza mental e autoconfiança inabalável.</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Superação de vícios, procrastinação e preguiça.</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 text-green-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Uma profunda conexão com sua melhor versão.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- História do Fundador -->
+        <section class="py-16 md:py-24 px-6 section-divider relative overflow-hidden">
+            <canvas id="fundador-particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="max-w-5xl mx-auto relative z-10 bg-black/70 backdrop-blur-sm p-8 rounded-lg flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="w-full md:w-2/5 flex justify-center">
+                    <img src="https://i.imgur.com/2RmqixF.jpeg" alt="Foto do Fundador" class="rounded-2xl w-60 h-60 sm:w-72 sm:h-72 md:w-full md:h-auto object-cover">
+                </div>
+                <div class="md:w-3/5 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">De Sedentário a Maratonista</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed">“Eu era sedentário, fumava, estava acima do peso e completamente perdido. Em poucos anos, com disciplina, corrida e fé, me transformei em maratonista e referência em alta performance. Eu sei o que é estar no fundo do poço e sei o caminho para sair de lá. Esse desafio é o atalho que eu gostaria de ter tido quando comecei minha jornada. É o meu mapa para a sua transformação.”</p>
+                    <p class="mt-4 font-bold text-xl gold-text">- Nicolas Marcondes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chamada para Ação Forte -->
+        <section id="cta" class="py-16 md:py-24 px-6 text-center section-divider relative overflow-hidden">
+            <canvas id="cta-particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="max-w-3xl mx-auto relative z-10 bg-black/70 backdrop-blur-sm py-12 px-6 rounded-lg">
+                <h2 class="text-4xl md:text-5xl font-black uppercase">Sua Nova Identidade te Espera.</h2>
+                <p class="mt-4 text-lg text-gray-200">A decisão que você toma hoje define quem você será amanhã. Você tem coragem de se comprometer?</p>
+                <a href="#final-cta" class="cta-button inline-block mt-8 bg-red-600 text-white uppercase font-bold text-lg md:text-xl py-4 px-12 md:py-5 md:px-16 rounded-lg">Eu Aceito o Desafio</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-16 md:py-24 px-6 section-divider relative overflow-hidden">
+             <canvas id="faq-particle-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="max-w-3xl mx-auto relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Dúvidas Frequentes</h2>
+                <div class="space-y-4">
+                    <details class="faq-item bg-black p-6 rounded-lg cursor-pointer border border-gray-800">
+                        <summary class="font-semibold text-lg flex justify-between items-center">Preciso ser atleta?<span class="transform transition-transform duration-300">+</span></summary>
+                        <p class="mt-4 text-gray-400">Não. O desafio foi desenhado para todos os níveis. Temos trilhas específicas para quem está saindo do zero e para quem já treina. O foco é a sua evolução pessoal, não competição.</p>
+                    </details>
+                    <details class="faq-item bg-black p-6 rounded-lg cursor-pointer border border-gray-800">
+                        <summary class="font-semibold text-lg flex justify-between items-center">E se eu não tiver tempo?<span class="transform transition-transform duration-300">+</span></summary>
+                        <p class="mt-4 text-gray-400">O desafio exige comprometimento, não tempo de sobra. As atividades são projetadas para se encaixarem em rotinas ocupadas. Se você não tem tempo, é exatamente por isso que precisa do desafio: para criar uma rotina que te dê mais energia e foco.</p>
+                    </details>
+                    <details class="faq-item bg-black p-6 rounded-lg cursor-pointer border border-gray-800">
+                        <summary class="font-semibold text-lg flex justify-between items-center">Funciona mesmo em 21 dias?<span class="transform transition-transform duration-300">+</span></summary>
+                        <p class="mt-4 text-gray-400">21 dias é o tempo cientificamente validado para construir um novo hábito. Neste período, você vai quebrar ciclos viciosos e instalar novos padrões neurais. A transformação é real e duradoura se você se entregar ao processo.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Final -->
+        <footer id="final-cta" class="py-16 md:py-24 px-6 text-center bg-black">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">21 dias podem mudar o <span class="red-gradient-text">resto da sua vida</span>.</h2>
+                <p class="mt-4 text-lg text-gray-300">Está pronto para entrar no desafio?</p>
+                <a href="#" class="cta-button inline-block mt-8 bg-red-600 text-white uppercase font-bold text-lg md:text-xl py-4 px-12 md:py-5 md:px-16 rounded-lg">Quero Começar Agora</a>
+                <p class="mt-12 text-sm text-gray-500">&copy; 2024 High Performance. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Script para animação do FAQ
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('toggle', event => {
+                const summary = item.querySelector('summary');
+                const icon = summary.querySelector('span');
+                if (item.open) {
+                    icon.textContent = '-';
+                } else {
+                    icon.textContent = '+';
+                }
+            });
+        });
+
+        // Função genérica para criar animação de partículas
+        function setupParticleAnimation(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            let particlesArray;
+
+            function setCanvasSize() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            setCanvasSize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.color = `hsla(0, 100%, 50%, ${Math.random() * 0.5 + 0.2})`;
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                    if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particlesArray = [];
+                let numberOfParticles = (canvas.width * canvas.height) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+
+            new ResizeObserver(() => {
+                setCanvasSize();
+                init();
+            }).observe(canvas.parentElement);
+        }
+
+        // Inicia a animação para as seções desejadas
+        setupParticleAnimation('arsenal-particle-canvas');
+        setupParticleAnimation('transformations-particle-canvas');
+        setupParticleAnimation('cta-particle-canvas');
+        setupParticleAnimation('faq-particle-canvas');
+        setupParticleAnimation('fundador-particle-canvas');
+    </script>
+
+</body>
+</html>
